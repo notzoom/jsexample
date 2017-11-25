@@ -340,6 +340,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 			 .replace(/([\$\£\#])(\s{1,})/g, '$1')
              .replace(/[\,\.\!\:\;](?![\"\'\)\]\}\”])([a-zA-Z0-9]\.{1,}[\,\.\!\:\;])/g, "$& ")
 	     .replace(/['][\s][s][\s]/g,  "'s ")
+	     .replace(/['][\s][t][\s]/g,  "'t ")
              .split(/[\s]+/g)
              .filter(function(word){ return word.length; })
              .map(wordToNode);
