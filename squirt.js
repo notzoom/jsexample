@@ -327,7 +327,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 
   function makeTextToNodes(wordToNode) {
     return function textToNodes(text) {
-      text = "3\n 2\n 1\n " + text.trim('\n').replace(/\s+\n/g,'\n');
+      text = text.trim('\n').replace(/\s+\n/g,'\n');
       return text
 			 .replace(/ \./g, '.')
 			 .replace(/(\.[\s])(?=\”)/g, '.')
