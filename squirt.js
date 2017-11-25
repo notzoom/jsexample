@@ -294,7 +294,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 
     function readabilityFail(){
         var modal = document.querySelector('.sq .modal');
-        modal.innerHTML = '<div class="error">Oops! This page is too hard for Squirt to read. We\'ve been notified, and will do our best to resolve the issue shortly.</div>';
+        modal.innerHTML = '<div class="error">Oops! This page is too hard for Squirt to read.</div>';
     };
 
 	var startWPM = ( sq.cookies.values && sq.cookies.values.wpm && !isNaN(parseInt(sq.cookies.values.wpm)) ) ? parseInt(sq.cookies.values.wpm) : 400;
@@ -342,6 +342,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/['][\s][s][\s]/g,  "'s ")
 	     .replace(/['][\s][t][\s]/g,  "'t ")
 	     .replace(/["][\s][.][\s]/g,  '". ')
+	     .replace(/[\s][,][\s]/g,  ', ')
              .split(/[\s]+/g)
              .filter(function(word){ return word.length; })
              .map(wordToNode);
