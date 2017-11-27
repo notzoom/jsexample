@@ -67,9 +67,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 			removeElements( article.querySelectorAll(".ebz_native_center") );
 		}
 		
-		article = article.replace(/<span[^>]+>|</span>/g,'');
-		article = article.replace(/\>\s+\</g,'');
-		
 		return article;
 	}
 	
