@@ -338,7 +338,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       text = text.trim('\n').replace(/\s+\n/g,'\n');
       return text
 	     .replace(/ \./g, '.')
-	     .replace(/(\.[\s])(?=\”)/g, '.')
 	     .replace(/([\s](\-|\—|\–)[\s])/g, ' ')
 	     .replace(/(\(\s)(?=.)/g, '(')
 	     .replace(/(?=.)(\s\))/g, ')')
@@ -346,13 +345,13 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/[,](?![\"\”\'])/g, '$& ')
 	     .replace(/(?!^)(?=.)[^\s](?=[\"\”\'])[^\s]/g, '$& ')
 	     .replace(/([\$\£\#])(\s{1,})/g, '$1')
-             .replace(/[\,\.\!\:\;](?![\"\'\)\]\}\”])([a-zA-Z0-9]\.{1,}[\,\.\!\:\;])/g, "$& ")
-  	     .replace(/['][\s][s][\s]/g,  "$1$3$4")
-  	     .replace(/['][\s][t][\s]/g,  "$1$3$4")
- 	     .replace(/["][\s][.][\s]/g,  '$1$3$4')
-  	     .replace(/[\s][,][\s]/g,  '$2$3')
+  	     .replace(/['][\s][s][\s]/g,  "'s ")
+  	     .replace(/['][\s][t][\s]/g,  "'t ")
+ 	     .replace(/["][\s][.][\s]/g,  '". ')
+  	     .replace(/[\s][,][\s]/g,  ', ')
   	     .replace(/([\0-9])([\,])(\s{1,})([\0-9])/g, '$1$2$4')
   	     .replace(/([\0-9])([\.])(\s{1,})([\0-9])/g, '$1$2$4')
+	     .replace(/["][.]/g,  '". ')
              .split(/[\s]+/g)
              .filter(function(word){ return word.length; })
              .map(wordToNode);
