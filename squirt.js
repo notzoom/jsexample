@@ -329,6 +329,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     return function textToNodes(text) {
       text = text.trim('\n').replace(/\s+\n/g,'\n');
       return text
+	      console.log(text);
 	     .replace(/['][\s][s][\s]/g,  "'s ")
 	     .replace(/['][\s][t][\s]/g,  "'t ")
 	     .replace(/["][\s][.][\s]/g,  '". ')
