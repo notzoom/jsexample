@@ -68,7 +68,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 		}
 		
 		article = article.innerHTML;
-		article = article.replace(/<span[^>]+>|</span>/g, '');
+		article = article.replace(/<span[^>]+>|</span>[\s]+/g, '');
 		article.innerHTML = article;
 		
 		return article;
