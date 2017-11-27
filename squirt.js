@@ -48,7 +48,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     };
 
 	function removeUnwantedElements(article){
-		var span = article.querySelector('span');
+		var span = article.querySelectorAll('span');
                 span.parentNode.replaceChild(article.createTextNode(span.textContent), span);
 		// Custom element removal
 		let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
