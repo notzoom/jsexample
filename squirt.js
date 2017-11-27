@@ -48,23 +48,13 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     };
 
 	function removeUnwantedElements(article){
-		// Span element unwrap
-                var span = article.querySelectorAll("span");
-                if( span.length ) {
-                [].forEach.call( span, function(e) {
-                   var parent = e.parentNode;
-                   // move all children out of the element
-                   while (e.firstChild) parent.insertBefore(e.firstChild, e);
-                   // remove the empty element
-                   parent.removeChild(e);
-                 });
-                }
 		// Custom element removal
 		let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
 		removeElements( article.querySelectorAll(".image-and-copyright-container") );	
 		removeElements( article.querySelectorAll("sup") );		
 		removeElements( article.querySelectorAll("script") );
 		removeElements( article.querySelectorAll("noscript") );
+		removeElements( article.querySelectorAll(".image-and-copyright-container") );
 
 		if (window.location.hostname.indexOf('wikipedia.org') != -1){
 			removeElements( article.querySelectorAll(".infobox") );
@@ -77,6 +67,17 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 		if (window.location.hostname.indexOf('coindesk.com') != -1){
 			removeElements( article.querySelectorAll(".ebz_native_center") );
 		}
+		// Span element unwrap
+                var span = article.querySelectorAll("span");
+                if( span.length ) {
+                [].forEach.call( span, function(e) {
+                   var parent = e.parentNode;
+                   // move all children out of the element
+                   while (e.firstChild) parent.insertBefore(e.firstChild, e);
+                   // remove the empty element
+                   parent.removeChild(e);
+                 });
+                }
 		
 		return article;
 	}
