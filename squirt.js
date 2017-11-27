@@ -56,7 +56,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
                    // move all children out of the element
                    while (e.firstChild) parent.insertBefore(e.firstChild, e);
                    // remove the empty element
-                  parent.removeChild(e);
+                   parent.removeChild(e);
                  });
                 }
 		// Custom elements removal
