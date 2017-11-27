@@ -330,12 +330,10 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       text = text.trim('\n').replace(/\s+\n/g,'\n');
       return text
 	     .replace(/ \./g, '.')
-  	     .replace(/(\.[\s])(?=\”)/g, '.')
  	     .replace(/([\s](\-|\—|\–)[\s])/g, ' ')
 	     .replace(/\s(?=[\;\!\,])/g, '') 
 	     .replace(/(\(\s)(?=.)/g, '(') 
 	     .replace(/(?=.)(\s\))/g, ')')
- 	     .replace(/[,](?![\"\”\'])/g, '$& ')
  	     .replace(/([\$\£\#])(\s{1,})/g, '$1')
 	     .replace(/['][\s][s][\s]/g,  "'s ")
 	     .replace(/['][\s][t][\s]/g,  "'t ")
