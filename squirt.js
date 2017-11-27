@@ -48,6 +48,14 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     };
 
 	function removeUnwantedElements(article){
+		while(el = article.body.querySelector("span")) {
+                      // get the element's parent node
+                      var parent = el.parentNode;
+                      // move all children out of the element
+                      while (el.firstChild) parent.insertBefore(el.firstChild, el);
+                      // remove the empty element
+                      parent.removeChild(el);
+                }
 		// Custom element removal
 		let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
 		removeElements( article.querySelectorAll(".image-and-copyright-container") );	
