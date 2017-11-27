@@ -48,7 +48,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     };
 
 	function removeUnwantedElements(article){
-		// Span elements unwrap
+		// Span element unwrap
                 var span = article.querySelectorAll("span");
                 if( span.length ) {
                 [].forEach.call( span, function(e) {
@@ -59,7 +59,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
                    parent.removeChild(e);
                  });
                 }
-		// Custom elements removal
+		// Custom element removal
 		let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
 		removeElements( article.querySelectorAll(".image-and-copyright-container") );	
 		removeElements( article.querySelectorAll("sup") );		
