@@ -90,6 +90,9 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       function readabilityReady(){
         handler && document.removeEventListener('readility.ready', handler);
 		let article = readability.grabArticle();
+	        let article = article.innerHTML;
+	        article = article.replace(/\>\s+\</g,'');
+	        article.innerHTML = article;
 		// Read text
 		article = removeUnwantedElements(article)
 		read(readability.grabArticleText(article));
