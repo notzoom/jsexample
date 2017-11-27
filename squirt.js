@@ -63,6 +63,9 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 			removeElements( article.querySelectorAll(".source") );
 			removeElements( article.querySelectorAll(".slideshow-content") );
 		}
+		if (window.location.hostname.indexOf('coindesk.com') != -1){
+			removeElements( article.querySelectorAll(".ebz_native_center") );
+		}
 		
 		return article;
 	}
