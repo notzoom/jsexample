@@ -48,10 +48,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     };
 
 	function removeUnwantedElements(article){
-		var span = article.getElementsByTagName('span');
-                var pa = span.parentNode;
-                while(span.firstChild) pa.insertBefore(span.firstChild, span);
-                pa.removeChild(span);
 		// Custom element removal
 		let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
 		removeElements( article.querySelectorAll(".image-and-copyright-container") );	
