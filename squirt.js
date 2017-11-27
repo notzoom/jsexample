@@ -48,7 +48,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     };
 
 	function removeUnwantedElements(article){
-		while(el = article.body.querySelector("span")) {
+		while(el = article.querySelector("span")) {
                       // get the element's parent node
                       var parent = el.parentNode;
                       // move all children out of the element
