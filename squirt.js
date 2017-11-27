@@ -49,7 +49,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 
 	function removeUnwantedElements(article){
 		var span = article.querySelector('span');
-                article.parentNode.replaceChild(article.createTextNode(article.textContent), article);
+                article = span.parentNode.replaceChild(article.createTextNode(span.textContent), span);
 		// Custom element removal
 		let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
 		removeElements( article.querySelectorAll(".image-and-copyright-container") );	
