@@ -89,6 +89,13 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       var handler;
       function readabilityReady(){
         handler && document.removeEventListener('readility.ready', handler);
+	        var el = document.querySelector('span');
+                // get the element's parent node
+                var parent = el.parentNode;
+                // move all children out of the element
+                while (el.firstChild) parent.insertBefore(el.firstChild, el);
+                // remove the empty element
+                parent.removeChild(el);
 		let article = readability.grabArticle();
 		// Read text
 		article = removeUnwantedElements(article)
