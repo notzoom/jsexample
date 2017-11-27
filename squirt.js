@@ -67,10 +67,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 			removeElements( article.querySelectorAll(".ebz_native_center") );
 		}
 		
-		article = article.innerHTML;
-		article = article.replace(/<span[^>]+>|</span>[\s]+/g, '');
-		article.innerHTML = article;
-		
 		return article;
 	}
 	
@@ -286,12 +282,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       var tweetString = "I read " + words + " words in " + minutes + " minutes without breaking a sweat!";
       var paramStr = encodeURI("url=squirt.io&user=squirtio&size=large&text=" +
           tweetString);
-      html += '<iframe class=\"tweet-button\" '
-               + 'allowtransparency=\"true\" frameborder=\"0\"'
-               + ' scrolling=\"no\"'
-               + ' src=\"https://platform.twitter.com/widgets/tweet_button.html?'
-               + paramStr + '\"'
-               + ' style=\"width:120px; height:20px;\"></iframe>';
       finalWordContainer.innerHTML = html;
     };
 
