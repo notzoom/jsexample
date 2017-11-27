@@ -67,6 +67,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 		if (window.location.hostname.indexOf('coindesk.com') != -1){
 			removeElements( article.querySelectorAll(".ebz_native_center") );
 		}
+		
 		// Span element unwrap
                 var span = article.querySelectorAll("span");
                 if( span.length ) {
