@@ -51,7 +51,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 		
 		// Custom element removal
 		let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
-		removeElements( article.querySelectorAll(".image-and-copyright-container") );	
 		removeElements( article.querySelectorAll("sup") );		
 		removeElements( article.querySelectorAll("script") );
 		removeElements( article.querySelectorAll("noscript") );
@@ -104,7 +103,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
         handler && document.removeEventListener('readility.ready', handler);
 		let article = readability.grabArticle();
 		// Read text
-		//article = removeUnwantedElements(article)
+		article = removeUnwantedElements(article)
 		read(readability.grabArticleText(article));
       };
 
