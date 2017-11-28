@@ -55,7 +55,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 		removeElements( article.querySelectorAll("sup") );		
 		removeElements( article.querySelectorAll("script") );
 		removeElements( article.querySelectorAll("noscript") );
-		removeElements( article.querySelectorAll(".image-and-copyright-container") );
 
 		if (window.location.hostname.indexOf('wikipedia.org') != -1){
 			removeElements( article.querySelectorAll(".infobox") );
