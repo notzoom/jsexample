@@ -217,13 +217,13 @@
 }
 
 .sq .progress-bar .inner-bar{
-	height: 12px;
-	padding: 3px;
+    height: 12px;
+    padding: 3px;
     background-color: #cccccc;
     box-shadow: inset 0 5px 15px rgba(132, 132, 132, 0.6);
     overflow: hidden;
     box-sizing: border-box;
-	cursor: pointer;	
+    cursor: pointer;	
 }
 
 .sq .progress-bar .inner-bar .position {
