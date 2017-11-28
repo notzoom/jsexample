@@ -268,8 +268,8 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     };
 
     var waitAfterShortWord = 1.2;
-    var waitAfterComma = 2;
-    var waitAfterPeriod = 4;
+    var waitAfterComma = 1.3;
+    var waitAfterPeriod = 3.5;
     var waitAfterParagraph = 4.5;
     var waitAfterLongWord = 1.5;
     function getDelay(node, jumped){
