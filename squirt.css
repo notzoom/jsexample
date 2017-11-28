@@ -206,6 +206,7 @@
 
 .sq .progress-bar{
     width: 80%;
+    height: auto;
     position: absolute;
     left: 0;
     bottom: 0;
