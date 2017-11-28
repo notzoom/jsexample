@@ -278,8 +278,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       if(jumped) return waitAfterPeriod;
       if(word == "Mr." ||
           word == "Mrs." ||
-          word == "Ms." ||
-          word == "U.S.") return 1;
+          word == "Ms.") return 1;
       var lastChar = word[word.length - 1];
       if(lastChar.match('”|"')) lastChar = word[word.length - 2];
       if(lastChar == '\n') return waitAfterParagraph;
@@ -356,6 +355,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/[.]["]/g,  '." ')
 	     .replace(/([\0-9])([\,])(\s{1,})([\0-9])/g, '$1$2$4')
   	     .replace(/([\0-9])([\.])(\s{1,})([\0-9])/g, '$1$2$4')
+	     .replace(/([\s]+)([a-z|A-Z])([.])([\s]+)([a-z|A-Z])([.]?)([\s]+)/g,  '$1$2$3$5$6$7')
              .split(/[\s]+/g)
              .filter(function(word){ return word.length; })
              .map(wordToNode);
