@@ -293,8 +293,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     function showTweetButton(words, minutes){
       var html = "<div>You just read " + words + " words in " + minutes + " minutes!</div>";
       var tweetString = "I read " + words + " words in " + minutes + " minutes without breaking a sweat!";
-      var paramStr = encodeURI("url=squirt.io&user=squirtio&size=large&text=" +
-          tweetString);
+      var paramStr = encodeURI("url=squirt.io&user=squirtio&size=large&text=" + tweetString);
       finalWordContainer.innerHTML = html;
     };
 
@@ -351,12 +350,12 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/['][\s]+(re)[\s]+/g,  "'re ")
  	     .replace(/["][\s]+[.][\s]+/g,  '". ')
   	     .replace(/[\s]+[,][\s]+/g,  ', ')
-  	     .replace(/([\0-9])([\,])(\s{1,})([\0-9])/g, '$1$2$4')
-  	     .replace(/([\0-9])([\.])(\s{1,})([\0-9])/g, '$1$2$4')
 	     .replace(/[.]/g,  '. ')
 	     .replace(/ \./g, '.')
 	     .replace(/[.][\s]+["]/g,  '."')
 	     .replace(/[.]["]/g,  '." ')
+	     .replace(/([\0-9])([\,])(\s{1,})([\0-9])/g, '$1$2$4')
+  	     .replace(/([\0-9])([\.])(\s{1,})([\0-9])/g, '$1$2$4')
              .split(/[\s]+/g)
              .filter(function(word){ return word.length; })
              .map(wordToNode);
