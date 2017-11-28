@@ -68,10 +68,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 			removeElements( article.querySelectorAll(".ebz_native_center") );
 		}
 		
-		if (window.location.hostname.indexOf('theguardian.com') != -1){
-			article = document.querySelectorAll("article") );
-		}
-		
 		// Span element unwrap
                 var span = article.querySelectorAll("span");
                 if( span.length ) {
