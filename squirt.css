@@ -72,6 +72,7 @@
   border-left: 1px solid rgba(0,0,0, .4);
   padding-bottom: 22px;
   box-sizing: border-box; 
+  z-index: 99999999999999999999999;
 }
 
 .sq .word-container {
