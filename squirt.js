@@ -351,7 +351,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
   	     .replace(/[\s]+[,][\s]+/g,  ', ')
 	     .replace(/[.]/g,  '. ')
 	     .replace(/ \./g, '.')
-	     .replace(/[.][\s]*["]/g,  '." ')
+	     .replace(/[\s]+["][\s]+/g,  '" ')
 	     .replace(/["][.]["][\s]*/g,  '". "')
 	     .replace(/[.][\s]*[”]/g,  '.” ')
 	     .replace(/ \…/g,  '…')
