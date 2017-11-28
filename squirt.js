@@ -102,8 +102,10 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       function readabilityReady(){
         handler && document.removeEventListener('readility.ready', handler);
 		let article = readability.grabArticle();
-		// Read text
-		//article = removeUnwantedElements(article)
+		if (window.location.hostname.indexOf('theguardian.com') != -1){
+		    article = document.body.querySelectorAll(".content__article-body");
+		}
+		article = removeUnwantedElements(article)
 		read(readability.grabArticleText(article));
       };
 
