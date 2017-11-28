@@ -7,7 +7,7 @@ sq.cookies = {
 	values: false
 };
 
-sq.progressBarLocation = 'bottom';
+sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 
 (function(){
 
