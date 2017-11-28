@@ -7,7 +7,7 @@ sq.cookies = {
 	values: false
 };
 
-sq.progressBarLocation = 'top';
+sq.progressBarLocation = 'bottom';
 
 (function(){
 
@@ -455,7 +455,7 @@ sq.progressBarLocation = 'top';
   }
 
   function makeGUI(){
-	var squirtExtraClass = (sq.progressBarLocation == 'top') ? ' bar-top' : '';  
+    var squirtExtraClass = (sq.progressBarLocation == 'top') ? ' bar-top' : '';  
     var squirt = makeDiv({class: 'sq'+squirtExtraClass}, document.body);
     squirt.style.display = 'none';
     on('squirt.close', hideGUI);
