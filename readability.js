@@ -461,8 +461,8 @@ var readability = {
      **/
     let innertext = articleContent.textContent
     let length = articleContent.textContent.length   
-    let medium = innertext.includes("medium.com")
-    if (1) {
+    let contains = innertext.includes('class="site-container"') || innertext.includes('class="section-content"')
+    if (length < 250 || contains) {
       page.innerHTML = pageCacheHtml;
 
       if (readability.flagIsActive(readability.FLAG_STRIP_UNLIKELYS)) {
