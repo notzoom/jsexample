@@ -41,10 +41,12 @@ var readability = {
   // Get the article title as an H1.
   getArticleTitle: function () {
     var curTitle = "",
+        curURL = "",
         origTitle = "";
 
     try {
       curTitle = origTitle = document.title;
+      curURL = document.URL;
 
       if(typeof curTitle !== "string") { /* If they had an element with id "title" in their HTML */
         curTitle = origTitle = document.getElementsByTagName('title')[0].textContent;
@@ -459,10 +461,9 @@ var readability = {
      * the sieve approach gives us a higher likelihood of finding the
      * -right- content.
      **/
-    let innerhtml = page.innerHTML;
     let length = articleContent.textContent.length;
-    let medium = (innerhtml.match(/medium.com/g) || []).length;
-    if (length < 250 || medium > 40) {
+    let medium = (curURL.match(/medium.com/g);
+    if (length < 250 || medium > 0) {
       page.innerHTML = pageCacheHtml;
 
       if (readability.flagIsActive(readability.FLAG_STRIP_UNLIKELYS)) {
