@@ -7,10 +7,12 @@
 
 var dbg = function() {};
 
+var curURL = document.URL;
+
 var readability = {
   version:                '1.7.1',
   flags:                   0x1 | 0x2 | 0x4,   /* Start with all flags set. */
-
+  
   /* constants */
   FLAG_STRIP_UNLIKELYS:     0x1,
   FLAG_WEIGHT_CLASSES:      0x2,
@@ -41,12 +43,10 @@ var readability = {
   // Get the article title as an H1.
   getArticleTitle: function () {
     var curTitle = "",
-        curURL = "",
         origTitle = "";
 
     try {
       curTitle = origTitle = document.title;
-      curURL = document.URL;
 
       if(typeof curTitle !== "string") { /* If they had an element with id "title" in their HTML */
         curTitle = origTitle = document.getElementsByTagName('title')[0].textContent;
