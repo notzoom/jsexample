@@ -460,8 +460,9 @@ var readability = {
      * -right- content.
      **/
     let article = articleContent.textContent;
+    console.log(article);
     let length = articleContent.textContent.length;
-    let medium = (article.match(/<[^>]*medium.com[^>]*>/g) || []).length;
+    let medium = (article.match(/medium.com/g) || []).length;
     if (length < 250 || medium > 30 ) {
       page.innerHTML = pageCacheHtml;
 
