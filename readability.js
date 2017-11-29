@@ -459,10 +459,10 @@ var readability = {
      * the sieve approach gives us a higher likelihood of finding the
      * -right- content.
      **/
-    var pagex = document.body.cloneNode(true);
-    var pagex = pagex.innerHTML;
+    page.innerHTML = pageCacheHtml;
+    let page = page.innerHTML;
     let length = articleContent.textContent.length;
-    let medium = pagex.includes("medium.com");
+    let medium = page.includes("medium.com");
     if (length < 250 || medium) {
       page.innerHTML = pageCacheHtml;
 
