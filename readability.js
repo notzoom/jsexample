@@ -462,8 +462,8 @@ var readability = {
      * -right- content.
      **/
     let length = articleContent.textContent.length;
-    let medium = (curURL.match(/medium.com/g);
-    if (length < 250 || medium > 0) {
+    let medium = curURL.includes("medium.com");
+    if (length < 250 || medium) {
       page.innerHTML = pageCacheHtml;
 
       if (readability.flagIsActive(readability.FLAG_STRIP_UNLIKELYS)) {
