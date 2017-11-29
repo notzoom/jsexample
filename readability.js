@@ -460,7 +460,7 @@ var readability = {
      * -right- content.
      **/
     let article = articleContent.textContent;
-    let rawhtml = articleContent.documentElement.outerHTML;
+    let rawhtml = articleContent.outerHTML;
     let length = articleContent.textContent.length;
     let medium = (rawhtml.match(/medium.com/g) || []).length;
     if (length < 250 || medium > 30 ) {
