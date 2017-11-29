@@ -7,8 +7,6 @@
 
 var dbg = function() {};
 
-var curURL = document.URL;
-
 var readability = {
   version:                '1.7.1',
   flags:                   0x1 | 0x2 | 0x4,   /* Start with all flags set. */
@@ -461,8 +459,10 @@ var readability = {
      * the sieve approach gives us a higher likelihood of finding the
      * -right- content.
      **/
+    var pagex = document.body.cloneNode(true);
+    var pagex = pagex.innerHTML;
     let length = articleContent.textContent.length;
-    let medium = curURL.includes("medium.com");
+    let medium = pagex.includes("medium.com");
     if (length < 250 || medium) {
       page.innerHTML = pageCacheHtml;
 
