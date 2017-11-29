@@ -475,7 +475,7 @@ var readability = {
         readability.removeFlag(readability.FLAG_CLEAN_CONDITIONALLY);
         return readability.grabArticle(page);
       } else {
-        return null;
+        return readability.grabArticle(page);
       }
     }
 
