@@ -460,8 +460,30 @@ var readability = {
      * -right- content.
      **/
     let length = articleContent.textContent.length
-    let medium = window.location.hostname.indexOf('medium.com') 
-    if ((length < 250) || (medium != -1)) {
+    if (length < 250) {
+      page.innerHTML = pageCacheHtml;
+
+      if (readability.flagIsActive(readability.FLAG_STRIP_UNLIKELYS)) {
+        readability.removeFlag(readability.FLAG_STRIP_UNLIKELYS);
+        return readability.grabArticle(page);
+      }
+      else if (readability.flagIsActive(readability.FLAG_WEIGHT_CLASSES)) {
+        readability.removeFlag(readability.FLAG_WEIGHT_CLASSES);
+        return readability.grabArticle(page);
+      }
+      else if (readability.flagIsActive(readability.FLAG_CLEAN_CONDITIONALLY)) {
+        readability.removeFlag(readability.FLAG_CLEAN_CONDITIONALLY);
+        return readability.grabArticle(page);
+      } else {
+        return null;
+      }
+    }
+
+    return articleContent;
+  },
+  
+    let length = articleContent.textContent.length
+    if (length > 19000) {
       page.innerHTML = pageCacheHtml;
 
       if (readability.flagIsActive(readability.FLAG_STRIP_UNLIKELYS)) {
