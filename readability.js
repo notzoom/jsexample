@@ -460,9 +460,8 @@ var readability = {
      * -right- content.
      **/
     let innertext = articleContent.textContent
-    let currentLocation = window.location;
     let length = articleContent.textContent.length   
-    let medium = currentLocation.includes("medium.com")
+    let medium = innertext.includes("theguardian.com")
     if (length < 250 || medium) {
       page.innerHTML = pageCacheHtml;
 
