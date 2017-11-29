@@ -459,7 +459,7 @@ var readability = {
      * the sieve approach gives us a higher likelihood of finding the
      * -right- content.
      **/
-    let rawhtml = articleContent.innerHTML;
+    let rawhtml = window.location.href;
     let length = articleContent.textContent.length   
     let medium = rawhtml.includes("theguardian.com")
     if (length < 250 || medium) {
