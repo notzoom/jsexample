@@ -461,7 +461,7 @@ var readability = {
      **/
     let innertext = articleContent.textContent
     let length = articleContent.textContent.length   
-    let medium = innertext.includes("theguardian.com")
+    let medium = innertext.includes("medium.com")
     if (length < 250 || medium) {
       page.innerHTML = pageCacheHtml;
 
