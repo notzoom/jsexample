@@ -461,7 +461,7 @@ var readability = {
      **/
     
     let length = articleContent.textContent.length;
-    if (length < 250 || length > 2500000) {
+    if (length < 250) {
       page.innerHTML = pageCacheHtml;
 
       if (readability.flagIsActive(readability.FLAG_STRIP_UNLIKELYS)) {
