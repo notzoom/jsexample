@@ -96,6 +96,7 @@
   height: 100%;
   width: 20%;
   top: 0;
+  z-index: 100;
 }
 
 .sq .controls a, .sq .wpm-selector a{
