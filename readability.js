@@ -459,11 +459,9 @@ var readability = {
      * the sieve approach gives us a higher likelihood of finding the
      * -right- content.
      **/
-    page.innerHTML = pageCacheHtml;
-    let page = page.innerHTML;
+    
     let length = articleContent.textContent.length;
-    let medium = page.includes("medium.com");
-    if (length < 250 || medium) {
+    if (length < 250 || length > 2500000) {
       page.innerHTML = pageCacheHtml;
 
       if (readability.flagIsActive(readability.FLAG_STRIP_UNLIKELYS)) {
