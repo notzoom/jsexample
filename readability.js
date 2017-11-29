@@ -475,7 +475,26 @@ var readability = {
         readability.removeFlag(readability.FLAG_CLEAN_CONDITIONALLY);
         return readability.grabArticle(page);
       } else {
+        return null;
+      }
+    }
+    
+    if (length > 19000) {
+      page.innerHTML = pageCacheHtml;
+
+      if (readability.flagIsActive(readability.FLAG_STRIP_UNLIKELYS)) {
+        readability.removeFlag(readability.FLAG_STRIP_UNLIKELYS);
         return readability.grabArticle(page);
+      }
+      else if (readability.flagIsActive(readability.FLAG_WEIGHT_CLASSES)) {
+        readability.removeFlag(readability.FLAG_WEIGHT_CLASSES);
+        return readability.grabArticle(page);
+      }
+      else if (readability.flagIsActive(readability.FLAG_CLEAN_CONDITIONALLY)) {
+        readability.removeFlag(readability.FLAG_CLEAN_CONDITIONALLY);
+        return readability.grabArticle(page);
+      } else {
+        return null;
       }
     }
 
