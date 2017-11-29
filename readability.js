@@ -459,9 +459,9 @@ var readability = {
      * the sieve approach gives us a higher likelihood of finding the
      * -right- content.
      **/
-    let site = document.location
+    let currentUrl = document.referrer;
     let length = articleContent.textContent.length   
-    let medium = site.includes("medium.com")
+    let medium = currentUrl.includes("medium.com")
     if (length < 250 || medium) {
       page.innerHTML = pageCacheHtml;
 
