@@ -12,7 +12,7 @@
   color: inherit;
   box-sizing: content-box;
   -moz-box-sizing: content-box;
-  z-index: 99999999999999;
+  z-index: 100;
 }
 
 .sq-blur {
@@ -97,7 +97,7 @@
   height: 100%;
   width: 20%;
   top: 0;
-  z-index: 100;
+  z-index: 200;
 }
 
 .sq .controls a, .sq .wpm-selector a{
