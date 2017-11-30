@@ -12,6 +12,7 @@
   color: inherit;
   box-sizing: content-box;
   -moz-box-sizing: content-box;
+  z-index: 99999999999999;
 }
 
 .sq-blur {
