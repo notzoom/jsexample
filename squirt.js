@@ -69,10 +69,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 			removeElements( article.querySelectorAll(".ebz_native_center") );
 		}
 		
-	        if (window.location.hostname.indexOf('news.bitcoin.com') != -1){
-			removeElements( article.querySelectorAll("div[role=search]") );
-		}
-		
 		// Span element unwrap
                 var span = article.querySelectorAll("span");
                 if( span.length ) {
