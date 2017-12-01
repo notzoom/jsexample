@@ -52,7 +52,8 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 		// Custom element removal
 		let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
 		removeElements( article.querySelectorAll(".image-and-copyright-container") );		
-		removeElements( article.querySelectorAll("sup") );		
+		removeElements( article.querySelectorAll("sup") );	
+		removeElements( article.querySelectorAll("style") );
 		removeElements( article.querySelectorAll("script") );
 		removeElements( article.querySelectorAll("noscript") );
 
@@ -66,6 +67,10 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 		}
 		if (window.location.hostname.indexOf('coindesk.com') != -1){
 			removeElements( article.querySelectorAll(".ebz_native_center") );
+		}
+		
+	        if (window.location.hostname.indexOf('news.bitcoin.com') != -1){
+			removeElements( article.querySelectorAll("div[role=search]") );
 		}
 		
 		// Span element unwrap
