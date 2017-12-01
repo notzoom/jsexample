@@ -367,6 +367,8 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/[\s]+[?]/g,  '?')
 	     .replace(/[\s]+[’]/g,  '’')
 	     .replace(/([\s](\-|\—|\–)[\s])/g, ' ')
+	     .replace(/[.]/g,  '. ')
+	     .replace(/ \./g, '.')
 	     .replace(/([\0-9])([\,])(\s{1,})([\0-9])/g, '$1$2$4')
   	     .replace(/([\0-9])([\.])(\s{1,})([\0-9])/g, '$1$2$4')
 	     .replace(/([\s]+)([a-z|A-Z])([.])([\s]+)([a-z|A-Z])([.]?)([\s]+)/g,  '$1$2$3$5$6$7')
@@ -375,8 +377,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/[P][h][.][\s]+[d]/g,  'Ph.d')
 	     .replace(/[P][h][.][\s]+[D]/g,  'Ph.D')
 	     .replace(/["][\s]*[.][\s]*["]/g,  '". "')
-	     .replace(/[.]/g,  '. ')
-	     .replace(/ \./g, '.')
              .split(/[\s]+/g)
              .filter(function(word){ return word.length; })
              .map(wordToNode);
