@@ -6,7 +6,7 @@ javascript:(function(){
     window.sq.userId = '--squirtUser--';
     window.sq.progressBarLocation = 'bottom'; /* 'bottom' | 'top' */
     s = document.createElement('script');
-    s.src = 'https://rawgit.com/notzoom/jsexample/master/squirt.js';
+    s.src = 'https://raw.githack.com/notzoom/jsexample/master/squirt.js';
     s.s = window.location.search;
     s.idx = s.s.indexOf('sq-dev');
     document.body.appendChild(s);
