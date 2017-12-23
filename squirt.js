@@ -382,7 +382,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/[\s]+[’]/g,  '’')
 	     .replace(/[\s]+["][.]/g,  '".')
 	      //code detection part
-	     .replace(/(var)([^]{1,15})(=)([^]{1,15})(;)/g, '<CODEHERE>$1$2$3$4$5<CODEHERE>')
+	     .replace(/^([^]{1,15})(=)([^]{1,15})(;)[\n]/gm, '<CODEHERE>$1$2$3$4$5<CODEHERE>')
 	     .replace(/<CODEHERE>[^]+<CODEHERE>/g, function(match) {
                   return match.replace(/ /g, '***tempmark***');
               });
