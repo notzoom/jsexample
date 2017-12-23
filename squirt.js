@@ -382,11 +382,11 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       text = text.replace(/[\s]+["][.]/g,  '".')
       text = text.replace(/^([^]{1,15})(=)([^]{1,15})[\n]/gm, '<CODEHERE>$1$2$3<CODEHERE>')
       text = text.replace(/<CODEHERE>([^]+)([\s]+)([=])([\s]+)([^]+)<CODEHERE>/g, '<CODEHERE>$1termendok$3termendok$5<CODEHERE>')
-      text = text.split(/ /g)
+      text = text.split(/[\s]+/g)
 
       for(var i = 0; i < text.length; i++) {
          text[i] = text[i].replace(/termendok/g, " ")
-         if (text[i].includes("\n") && text[i].includes("=")) {
+         if (text[i].includes("=")) {
              text[i].split("\n")
          }
       }
