@@ -386,14 +386,8 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 
       for(var i = 0; i < text.length; i++) {
          text[i] = text[i].replace(/termendok/g, " ")
-         if (text[i].includes("=")) {
-             text[i].split("\n")
-         }
+	 text[i] = text[i].replace(/<CODEHERE>/g, "");
       }
-	    
-      for(var i = 0; i < text.length; i++) {
-         text[i] = text[i].replace(/<CODEHERE>/g, "");
-      }	    
 
       text = text.filter(function(word){ return word.length; })
       text = text.map(wordToNode)
