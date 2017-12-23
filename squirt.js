@@ -383,16 +383,10 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/[\s]+["][.]/g,  '".')
 	      //code detection part
 	     .replace(/^([^]{1,15})(=)([^]{1,15})[\n]/gm, '<CODEHERE>$1$2$3$4$5<CODEHERE>')
-	     .replace(/<CODEHERE>[^]+<CODEHERE>/g, function(match) {
-                  return match.replace(/ /g, '***tempmark***');
-              })
+	     .replace(/<CODEHERE>([^]+)([\s]+)([=])([\s]+)([^]+)<CODEHERE>/g, '<CODEHERE>$1*term*$3*term*$5')
              .split(/[\s]+/g)
-	     .replace(/<CODEHERE>[^]+<CODEHERE>/g, function(match) {
-                  return match.replace(/***tempmark***/g, ' ');
-              })
-	     .replace(/<CODEHERE>[^]+<CODEHERE>/g, function(match) {
-                  return match.replace(/<CODEHERE>/g, '');
-              })
+	     .replace(/<CODEHERE>([^]+)(*term*)([=])(*term*)([^]+)<CODEHERE>/g, '<CODEHERE>$1 $3 $5')
+	     .replace(/<CODEHERE>/g, '')
 	     .split(/[\n]+/g)
              .filter(function(word){ return word.length; })
              .map(wordToNode);
