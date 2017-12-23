@@ -22,6 +22,7 @@
   -moz-filter: blur(4px);
   -o-filter: blur(4px);
   -ms-filter: blur(4px);
+  z-index: 100;
 }
 
 .sq-obscure {
@@ -235,7 +236,7 @@
 
     background-image: -webkit-linear-gradient(bottom, #ff4500 0%, #ff4500 47%, #cf3a02 50%, #cf3a02 100%);
     background-image: linear-gradient(to bottom, #ff4500 0%, #ff4500 47%, #cf3a02 50%, #cf3a02 100%);	
-	z-index: 1;
+    z-index: 1;
 }
 
 /* Mobile */
