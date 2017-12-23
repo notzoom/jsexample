@@ -393,7 +393,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/<CODEHERE>[^]+<CODEHERE>/g, function(match) {
                   return match.replace(/<CODEHERE>/g, '');
               });
-	     .split(/[\n]/g)
+	     .split(/[\n]+/g)
              .filter(function(word){ return word.length; })
              .map(wordToNode);
     };
