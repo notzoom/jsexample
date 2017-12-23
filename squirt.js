@@ -385,15 +385,19 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       text = text.split(/ /g)
 
       for(var i = 0; i < text.length; i++) {
-         text[i] = text[i].replace(/termendok/g, " ");
+         text[i] = text[i].replace(/termendok/g, " ")
          if (text[i].includes("\n")) {
              text[i].split("\n")
          }
       }
+	    
+      for(var i = 0; i < text.length; i++) {
+         text[i] = text[i].replace(/<CODEHERE>/g, "");
+      }	    
 
       text = text.filter(function(word){ return word.length; })
-      text = text.map(wordToNode);
-      return text
+      text = text.map(wordToNode)
+      return text;
     };
   };
 
