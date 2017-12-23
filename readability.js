@@ -463,8 +463,7 @@ var readability = {
     let rawhtml = articleContent.outerHTML;
     let length = articleContent.textContent.length;
     let medium = (rawhtml.match(/medium.com/g) || []).length;
-    let washingtonpost = (rawhtml.match(/washingtonpost.com/g) || []).length;
-    if (length < 250 || medium > 30 || washingtonpost > 30 ) {
+    if (length < 250 || medium > 30) {
       page.innerHTML = pageCacheHtml;
 
       if (readability.flagIsActive(readability.FLAG_STRIP_UNLIKELYS)) {
