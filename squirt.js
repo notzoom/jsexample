@@ -386,7 +386,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 
       for(var i = 0; i < text.length; i++) {
          text[i] = text[i].replace(/termendok/g, " ")
-         if (text[i].includes("\n")) {
+         if (text[i].includes("\n") && text[i].includes("=")) {
              text[i].split("\n")
          }
       }
