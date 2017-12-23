@@ -385,7 +385,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	     .replace(/^([^]{1,15})(=)([^]{1,15})[\n]/gm, '<CODEHERE>$1$2$3$4$5<CODEHERE>')
 	     .replace(/<CODEHERE>([^]+)([\s]+)([=])([\s]+)([^]+)<CODEHERE>/g, '<CODEHERE>$1termendok$3termendok$5')
              .split(/[\s]+/g)
-	     .replace(/<CODEHERE>([^]+)(termendok)([=])(termendok)([^]+)<CODEHERE>/g, '<CODEHERE>$1 $3 $5')
+	     .replace(/(termendok)/g, ' ')
 	     .replace(/<CODEHERE>/g, '')
 	     .split(/[\n]+/g)
              .filter(function(word){ return word.length; })
