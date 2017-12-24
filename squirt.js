@@ -382,14 +382,14 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       text = text.replace(/[\s]+["][.]/g,  '".')
       text = text.replace(/^([^]{1,15})(=)([^]{1,15})[\n]/gm, '<CODEHERE>$1$2$3<CODEHERE>')
       var text = text.replace(/<CODEHERE>([^]+)([=])([^]+)<CODEHERE>/g, function(match) {
-             return match.replace(/[\s]+/g, 'termendokz');
-      });
+             return match.replace(/[\s]+/g, 'termendokz')
+      })
 	    
       text = text.split(/[\s]+/g)
 
       for(var i = 0; i < text.length; i++) {
          text[i] = text[i].replace(/termendokz/g, " ")
-	 text[i] = text[i].replace(/<CODEHERE>/g, "");
+	 text[i] = text[i].replace(/<CODEHERE>/g, "")
       }
 
       text = text.filter(function(word){ return word.length; })
