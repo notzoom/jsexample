@@ -47,43 +47,43 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       getText(read);
     };
 
-	function removeUnwantedElements(article){
+    function removeUnwantedElements(article){
 		
-		// Custom element removal
-		let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
-		removeElements( article.querySelectorAll(".image-and-copyright-container") );		
-		removeElements( article.querySelectorAll("sup") );	
-		removeElements( article.querySelectorAll("style") );
-		removeElements( article.querySelectorAll("script") );
-		removeElements( article.querySelectorAll("noscript") );
-		removeElements( article.querySelectorAll(".mw-editsection") );
+	    // Custom element removal
+	    let removeElements = (elms) => Array.from(elms).forEach(el => el.remove());	
+	    removeElements( article.querySelectorAll(".image-and-copyright-container") );		
+	    removeElements( article.querySelectorAll("sup") );	
+	    removeElements( article.querySelectorAll("style") );
+	    removeElements( article.querySelectorAll("script") );
+	    removeElements( article.querySelectorAll("noscript") );
+	    removeElements( article.querySelectorAll(".mw-editsection") );
 
-		if (window.location.hostname.indexOf('wikipedia.org') != -1){
-			removeElements( article.querySelectorAll(".infobox") );
-			removeElements( article.querySelectorAll(".reflist") );
-		}
-		if (window.location.hostname.indexOf('businessinsider.com') != -1){
-			removeElements( article.querySelectorAll(".source") );
-			removeElements( article.querySelectorAll(".slideshow-content") );
-		}
-		if (window.location.hostname.indexOf('coindesk.com') != -1){
-			removeElements( article.querySelectorAll(".ebz_native_center") );
-		}
+	    if (window.location.hostname.indexOf('wikipedia.org') != -1){
+		    removeElements( article.querySelectorAll(".infobox") );
+		    removeElements( article.querySelectorAll(".reflist") );
+	    }
+	    if (window.location.hostname.indexOf('businessinsider.com') != -1){
+		    removeElements( article.querySelectorAll(".source") );
+		    removeElements( article.querySelectorAll(".slideshow-content") );
+	    }
+	    if (window.location.hostname.indexOf('coindesk.com') != -1){
+		    removeElements( article.querySelectorAll(".ebz_native_center") );
+	    }
 		
-		// Span element unwrap
-                var span = article.querySelectorAll("span");
-                if( span.length ) {
-                [].forEach.call( span, function(e) {
-                   var parent = e.parentNode;
-                   // move all children out of the element
-                   while (e.firstChild) parent.insertBefore(e.firstChild, e);
-                   // remove the empty element
-                   parent.removeChild(e);
-                 });
-                }
+	    // Span element unwrap
+            var span = article.querySelectorAll("span");
+            if( span.length ) {
+            [].forEach.call( span, function(e) {
+               var parent = e.parentNode;
+               // move all children out of the element
+               while (e.firstChild) parent.insertBefore(e.firstChild, e);
+               // remove the empty element
+               parent.removeChild(e);
+             });
+            }
 		
-		return article;
-	}
+	    return article;
+    }
 	
     function getText(read){
       // text source: demo
