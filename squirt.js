@@ -11,25 +11,25 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 
 (function(){
 
-	bindEvent(window, 'message', function (e) {
-		var msg = e.data;
-		if (typeof msg == "object" && msg.squirt_reply ){
-			delete msg.squirt_reply;
-			sq.cookies.values = {};
-			for (var k in msg){
-				if (msg.hasOwnProperty(k)) {
-					sq.cookies.values[k] = msg[k];
-				}
-			}
-			if (cookiesTimeout){
-				clearTimeout(cookiesTimeout);
-				makeSquirt(makeRead(makeTextToNodes(wordToNode)), makeGUI);
-			}			
-		}				
-	});	
-	var cookiesTimeout = setTimeout(function(){ 
-		makeSquirt(makeRead(makeTextToNodes(wordToNode)), makeGUI);
-	}, sq.cookies.timeout);	
+  bindEvent(window, 'message', function (e) {
+	  var msg = e.data;
+	  if (typeof msg == "object" && msg.squirt_reply ){
+		  delete msg.squirt_reply;
+		  sq.cookies.values = {};
+		  for (var k in msg){
+			  if (msg.hasOwnProperty(k)) {
+				  sq.cookies.values[k] = msg[k];
+			  }
+		  }
+		  if (cookiesTimeout){
+			  clearTimeout(cookiesTimeout);
+			  makeSquirt(makeRead(makeTextToNodes(wordToNode)), makeGUI);
+		  }			
+	  }				
+  });	
+  var cookiesTimeout = setTimeout(function(){ 
+	  makeSquirt(makeRead(makeTextToNodes(wordToNode)), makeGUI);
+  }, sq.cookies.timeout);	
 	
   loadCookiesFrame();
 
@@ -381,11 +381,14 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       text = text.replace(/[\s]+[’]/g,  '’')
       text = text.replace(/[\s]+["][.]/g,  '".')
       text = text.replace(/^([^]{1,15})(=)([^]{1,15})[\n]/gm, '<CODEHERE>$1$2$3<CODEHERE>')
-      text = text.replace(/<CODEHERE>([^]+)([\s]+)([=])([\s]+)([^]+)<CODEHERE>/g, '<CODEHERE>$1termendok$3termendok$5<CODEHERE>')
+      var text = text.replace(/<CODEHERE>([^]+)([=])([^]+)<CODEHERE>/g, function(match) {
+             return match.replace(/[\s]+/g, 'termendokz');
+      });
+	    
       text = text.split(/[\s]+/g)
 
       for(var i = 0; i < text.length; i++) {
-         text[i] = text[i].replace(/termendok/g, " ")
+         text[i] = text[i].replace(/termendokz/g, " ")
 	 text[i] = text[i].replace(/<CODEHERE>/g, "");
       }
 
