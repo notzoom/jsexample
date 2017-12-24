@@ -145,7 +145,6 @@ var readability = {
 
     switch(node.tagName) {
       case 'DIV':
-      case 'ARTICLE':
       node.readability.contentScore += 5;
       break;
 
