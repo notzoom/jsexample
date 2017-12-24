@@ -282,8 +282,10 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
           word == "Ms." ||
 	  word == "U.S.") return 1;
       var lastChar = word[word.length - 1];
+      var prevLastChar = word[word.length - 2];
       if(lastChar.match('”|"')) lastChar = word[word.length - 2];
       if(lastChar == '\n') return waitAfterParagraph;
+      if('.!?'.indexOf(prevLastChar) != -1) return waitAfterPeriod;
       if('.!?'.indexOf(lastChar) != -1) return waitAfterPeriod;
       if(',;:–'.indexOf(lastChar) != -1) return waitAfterComma;
       if(word.length < 4) return waitAfterShortWord;
