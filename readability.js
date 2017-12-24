@@ -236,7 +236,7 @@ var readability = {
       }
 
       /* Turn all divs that don't have children block level elements into p's */
-      if (node.tagName === "DIV" || window.location.hostname.indexOf('washingtonpost.com') != -1) {
+      if (node.tagName === "DIV") {
         if (node.innerHTML.search(readability.regexps.divToPElements) === -1) {
           var newNode = document.createElement('p');
           try {
