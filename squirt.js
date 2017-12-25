@@ -391,6 +391,8 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       text = text.replace(/[\s]+[?]/g,  '?')
       text = text.replace(/[\s]+[’]/g,  '’')
       text = text.replace(/[\s]+[*][\s]+([A-Z])/g,  '$1')
+      text = text.replace(/[\s]+[']/g,  "'")
+      // code detection
       text = text.replace(/^([^]{1,15})(=)([^]{1,15})[\n]/gm, '<CODEHERE>$1$2$3<CODEHERE>')
       var text = text.replace(/<CODEHERE>([^]+)([=])([^]+)<CODEHERE>/g, function(match) {
              return match.replace(/[\s]+/g, 'termendokz')
