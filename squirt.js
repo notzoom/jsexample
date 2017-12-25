@@ -69,6 +69,7 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	    if (window.location.hostname.indexOf('coindesk.com') != -1){
 		    removeElements( article.querySelectorAll(".ebz_native_center") );
 	    }
+	    console.log(window.location.hostname.indexOf('washingtonpost.com') != -1);
 	    if (window.location.hostname.indexOf('washingtonpost.com') != -1){
 		    removeElements( article.querySelectorAll("[id='bottom-furniture']") );
 	    }
