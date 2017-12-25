@@ -43,16 +43,14 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     });
 
     function startSquirt(){
-	    // Since this needs to be done before the GUI is shown
-	    if (window.location.hostname.indexOf('washingtonpost.com') != -1)
-		{
-			var hiddenElement = document.getElementById('bottom-furniture');
-			if (hiddenElement)
-			{
-				hiddenElement.outerHTML = '';
-				delete hiddenElement;
-			}
-	    }
+      // Since this needs to be done before the GUI is shown
+      if (window.location.hostname.indexOf('washingtonpost.com') != -1){
+	  var hiddenElement = document.getElementById('bottom-furniture');
+	  if (hiddenElement){
+	      hiddenElement.outerHTML = '';
+	      delete hiddenElement;
+	  }
+      }
 
       showGUI();
       getText(read);
