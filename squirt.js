@@ -69,9 +69,9 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	    if (window.location.hostname.indexOf('coindesk.com') != -1){
 		    removeElements( article.querySelectorAll(".ebz_native_center") );
 	    }
-	    console.log(window.location.hostname.indexOf('washingtonpost.com') != -1);
+	    console.log(article.querySelectorAll("[id='bottom-furniture']"));
 	    if (window.location.hostname.indexOf('washingtonpost.com') != -1){
-		    removeElements( article.querySelectorAll("[id='bottom-furniture']") );
+		    document.getElementById("bottom-furniture").outerHTML='';
 	    }
 		
 	    // Span element unwrap
