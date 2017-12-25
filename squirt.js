@@ -297,8 +297,8 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
       if('.!?'.indexOf(prevLastChar) != -1) return waitAfterPeriod;
       if('.!?'.indexOf(lastChar) != -1) return waitAfterPeriod;
       if(',;:–'.indexOf(lastChar) != -1) return waitAfterComma;
-      if(word.length < 4) return waitAfterShortWord;
-      if(word.length > 11) return waitAfterLongWord;
+      if(word.length < 4 && !waitAfterPeriod) return waitAfterShortWord;
+      if(word.length > 11 && !waitAfterPeriod) return waitAfterLongWord;
       return 1;
     };
 
