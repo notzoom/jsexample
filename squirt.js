@@ -43,6 +43,17 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
     });
 
     function startSquirt(){
+	    // Since this needs to be done before the GUI is shown
+	    if (window.location.hostname.indexOf('washingtonpost.com') != -1)
+		{
+			var hiddenElement = document.getElementById('bottom-furniture');
+			if (hiddenElement)
+			{
+				hiddenElement.outerHTML = '';
+				delete hiddenElement;
+			}
+	    }
+
       showGUI();
       getText(read);
     };
@@ -68,10 +79,6 @@ sq.progressBarLocation = sq.progressBarLocation || 'bottom';
 	    }
 	    if (window.location.hostname.indexOf('coindesk.com') != -1){
 		    removeElements( article.querySelectorAll(".ebz_native_center") );
-	    }
-	    console.log(document.querySelectorAll("#bottom-furniture"));
-	    if (window.location.hostname.indexOf('washingtonpost.com') != -1){
-		    removeElements( document.querySelectorAll("#bottom-furniture") );
 	    }
 		
 	    // Span element unwrap
